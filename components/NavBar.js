@@ -14,18 +14,12 @@ export default function NavBar() {
         </a>
       </Link>
       <style jsx>{`
-        nav {
-          background-color: #ff9c80;
-        }
-        a {
-          text-decoration: none;
-        }
         .active {
-          color: white;
+          color: gold;
         }
-        .inactive {
-          color: rgba(0, 0, 0, 0.8);
-        }
+        /* .inactive {
+          color: blue;
+        } */
       `}</style>
     </nav>
   );
