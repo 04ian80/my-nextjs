@@ -6,16 +6,7 @@ import Seo from '../components/Seo';
 export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          id,
-          title,
-        },
-      },
-      `/movies/${id}`
-    );
+    router.push(`/movies/${title}/${id}`);
   };
   const [movies, setMovies] = useState([]);
   return (
@@ -28,18 +19,7 @@ export default function Home({ results }) {
           className='movie'
         >
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
-          <Link
-            href={
-              ({
-                pathname: `/movies/${movie.id}`,
-                query: {
-                  id: movie.id,
-                  title: movie.original_title,
-                },
-              },
-              `/movies/${movie.id}`)
-            }
-          >
+          <Link href={`/movies/${movie.original_title}/${movie.id}`}>
             <a>{movie.original_title}</a>
           </Link>
         </div>
